@@ -1,5 +1,8 @@
 url = {
-    "base" : "https://www.pizzahutdelivery.ro"
+    "base" : "https://www.pizzahutdelivery.ro",
+    "my_account" : "/contul-meu",
+    "checkout" : "/checkout",
+    "payment" : "/checkout/plata"
 }
 pizzas = {
     "types": {
@@ -14,7 +17,6 @@ pizzas = {
         "small",
         "medium",
         "large"
-
     },
     "bases" : {
         "trad",
