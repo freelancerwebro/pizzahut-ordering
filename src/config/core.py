@@ -3,24 +3,34 @@ url = {
 }
 pizzas = {
     "types": {
-        "pizza-margherita",
-        "pizza-quattro-stagioni",
-        "pizza-rodeo",
-        "pizza-roma",
-        "pizza-california",
-        "pizza-europeana"
+        "margherita",
+        "quattro-stagioni",
+        "rodeo",
+        "roma",
+        "california",
+        "europeana"
     },
     "sizes": {
-        "size_small",
-        "size_medium",
-        "size_large"
+        "small",
+        "medium",
+        "large"
 
     },
     "bases" : {
-        "base_trad",
-        "base_italian",
-        "base_pan",
-        "base_crust",
-        "base_chbit"
+        "trad",
+        "italian",
+        "pan",
+        "crust",
+        "chbit"
     }
+}
+default_order = {
+    "items": [
+        {
+            "quantity": 1,
+            "product": "quattro-stagioni",
+            "size": "large",
+            "base": "trad"
+        }
+    ]
 }
