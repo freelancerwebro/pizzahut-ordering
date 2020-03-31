@@ -12,6 +12,11 @@ class OrderPizza:
         self.logger = logger
         self.initDriver()
 
+    def __del__(self):
+        time.sleep(5)
+        self.driver.close()
+        self.logger.p("Close browser")
+
     def initDriver(self):
         chrome_options = webdriver.ChromeOptions()
         #chrome_options.add_argument('headless')
@@ -24,9 +29,4 @@ class OrderPizza:
         acceptCookies = self.driver.find_element_by_css_selector('a#CybotCookiebotDialogBodyLevelButtonAccept')
         acceptCookies.click()
         self.logger.p("Accept cookies")
-
-    def __del__(self):
-        time.sleep(5)
-        self.driver.close()
-        self.logger.p("Close browser")
 
