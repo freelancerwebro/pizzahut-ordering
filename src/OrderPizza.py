@@ -25,3 +25,8 @@ class OrderPizza:
         acceptCookies.click()
         self.logger.p("Accept cookies")
 
+    def __del__(self):
+        time.sleep(5)
+        self.driver.close()
+        self.logger.p("Close browser")
+
