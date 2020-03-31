@@ -1,8 +1,14 @@
+import os
+
 url = {
     "base" : "https://www.pizzahutdelivery.ro",
     "my_account" : "/contul-meu",
     "checkout" : "/checkout",
     "payment" : "/checkout/plata"
+}
+credentials = {
+    "username" : os.environ['PIZZAHUT_USERNAME'],
+    "password" : os.environ['PIZZAHUT_PASSWORD']
 }
 pizzas = {
     "types": {

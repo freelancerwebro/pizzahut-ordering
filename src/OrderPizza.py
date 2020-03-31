@@ -30,3 +30,10 @@ class OrderPizza:
         acceptCookies.click()
         self.logger.p("Accept cookies")
 
+    def login(self):
+        usernameField = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH,'//input[@name="email"]')))
+        usernameField.send_keys(self.config.getUsername())
+        passwordField = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH,'//input[@name="password"]')))
+        passwordField.send_keys(self.config.getPassword())
+        usernameField.submit()
+        self.logger.p("Log in")

@@ -13,3 +13,9 @@ class Config:
 
     def getPaymentUrl(self):
         return self.getBaseUrl() + self.config.url['payment']
+
+    def getUsername(self):
+        return self.config.credentials['username']
+
+    def getPassword(self):
+        return self.config.credentials['password']
