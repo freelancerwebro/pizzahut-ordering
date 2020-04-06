@@ -58,3 +58,9 @@ class OrderPizza:
         if base:
             url = url + "/base_" + base
         return url
+
+    def checkout(self):
+        self.driver.get(self.config.getCheckoutUrl())
+        price = self.driver.find_element_by_css_selector('div#total_price span')
+
+        self.logger.p("Checkout order [TOTAL = " + price.text + "]")
