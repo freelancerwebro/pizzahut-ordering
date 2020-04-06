@@ -19,3 +19,6 @@ class Config:
 
     def getPassword(self):
         return self.config.credentials['password']
+
+    def getDefaultOrder(self):
+        return self.config.default_order['items']

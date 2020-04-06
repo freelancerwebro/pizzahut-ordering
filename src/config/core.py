@@ -37,7 +37,13 @@ default_order = {
         {
             "quantity": 1,
             "product": "quattro-stagioni",
-            "size": "large",
+            "size": "medium",
+            "base": "trad"
+        },
+        {
+            "quantity": 1,
+            "product": "roma",
+            "size": "medium",
             "base": "trad"
         }
     ]

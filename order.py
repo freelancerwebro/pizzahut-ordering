@@ -5,6 +5,8 @@ from src.Logger import Logger
 
 config = Config(configFile)
 logger = Logger()
+
 order = OrderPizza(config, logger)
 order.acceptCookies()
 order.login()
+order.addProductsToCart()

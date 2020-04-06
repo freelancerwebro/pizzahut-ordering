@@ -37,3 +37,24 @@ class OrderPizza:
         passwordField.send_keys(self.config.getPassword())
         usernameField.submit()
         self.logger.p("Log in")
+
+    def addProductsToCart(self):
+        self.logger.p("Add products to cart")
+        defaultOrder = self.config.getDefaultOrder()
+        for order in defaultOrder: 
+            self.addProductToCart(order['product'], order['size'], order['base'])
+
+    def addProductToCart(self, product, size, base):
+        url = self.getProductUrl(product, size, base)
+        self.driver.get(url)
+        addToCart = self.driver.find_element_by_css_selector('a.product_order')
+        addToCart.click()
+        self.logger.p(" -> Product added to cart [" + product + " / " + size + " / " + base + "]")
+
+    def getProductUrl(self, product, size = None, base = None):
+        url = self.config.getBaseUrl() + "/pizza/pizza-" + product
+        if size:
+            url = url + "/size_" + size
+        if base:
+            url = url + "/base_" + base
+        return url
