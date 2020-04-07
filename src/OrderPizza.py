@@ -6,6 +6,7 @@ import time
 
 class OrderPizza:
     logger = None
+    waitTimer = 5
 
     def __init__(self, config, logger):
         self.config = config
@@ -31,9 +32,9 @@ class OrderPizza:
         self.logger.p("Accept cookies")
 
     def login(self):
-        usernameField = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH,'//input[@name="email"]')))
+        usernameField = WebDriverWait(self.driver, self.waitTimer).until(EC.element_to_be_clickable((By.XPATH,'//input[@name="email"]')))
         usernameField.send_keys(self.config.getUsername())
-        passwordField = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH,'//input[@name="password"]')))
+        passwordField = WebDriverWait(self.driver, self.waitTimer).until(EC.element_to_be_clickable((By.XPATH,'//input[@name="password"]')))
         passwordField.send_keys(self.config.getPassword())
         usernameField.submit()
         self.logger.p("Log in")
@@ -59,8 +60,30 @@ class OrderPizza:
             url = url + "/base_" + base
         return url
 
-    def checkout(self):
+    def goToCheckout(self):
         self.driver.get(self.config.getCheckoutUrl())
         price = self.driver.find_element_by_css_selector('div#total_price span')
-
         self.logger.p("Checkout order [TOTAL = " + price.text + "]")
+
+    def selectDeliveryTime(self):
+        deliveryTime = self.config.getDeliveryTime()
+        selectTime = self.driver.find_element_by_css_selector('div.checkout_selection .otime_' + deliveryTime)
+        selectTime.click()
+
+        continueOrder = self.driver.find_element_by_css_selector('a.checkout_step2_bt')
+        continueOrder.click()
+        self.logger.p("Select delivery time [" + deliveryTime + "]")
+
+    def selectPaymentType(self):
+        time.sleep(5)
+        paymentType = self.config.getPaymentType()
+        payment = self.driver.find_element_by_css_selector('div#pay_' + str(paymentType))
+        payment.click()
+
+        paymentTypeStr = self.config.getPaymentById(paymentType)
+        self.logger.p("Select payment type [" + paymentTypeStr + "]")
+
+    def send(self):
+        send = self.driver.find_element_by_css_selector('a.checkout_step3_bt')
+        # send.click()
+        self.logger.p("Place order")

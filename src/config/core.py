@@ -48,3 +48,13 @@ default_order = {
         }
     ]
 }
+ordering = {
+    "delivery_time" : "now",
+    "payment_type"  : 3 ## POS
+}
+payment_methods = {
+    9999 : "Card",
+    2    : "Cash",
+    3    : "POS",
+    4    : "Meal tickets"
+}

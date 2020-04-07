@@ -22,3 +22,12 @@ class Config:
 
     def getDefaultOrder(self):
         return self.config.default_order['items']
+
+    def getDeliveryTime(self):
+        return self.config.ordering['delivery_time']
+
+    def getPaymentType(self):
+        return self.config.ordering['payment_type']
+
+    def getPaymentById(self, payment_id):
+        return self.config.payment_methods[payment_id]
