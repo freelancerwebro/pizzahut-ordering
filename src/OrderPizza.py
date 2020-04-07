@@ -62,6 +62,7 @@ class OrderPizza:
 
     def goToCheckout(self):
         self.driver.get(self.config.getCheckoutUrl())
+        time.sleep(5)
         price = self.driver.find_element_by_css_selector('div#total_price span')
         self.logger.p("Checkout order [TOTAL = " + price.text + "]")
 

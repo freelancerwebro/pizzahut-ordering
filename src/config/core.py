@@ -10,28 +10,6 @@ credentials = {
     "username" : os.environ['PIZZAHUT_USERNAME'],
     "password" : os.environ['PIZZAHUT_PASSWORD']
 }
-pizzas = {
-    "types": {
-        "margherita",
-        "quattro-stagioni",
-        "rodeo",
-        "roma",
-        "california",
-        "europeana"
-    },
-    "sizes": {
-        "small",
-        "medium",
-        "large"
-    },
-    "bases" : {
-        "trad",
-        "italian",
-        "pan",
-        "crust",
-        "chbit"
-    }
-}
 default_order = {
     "items": [
         {
