@@ -1,16 +1,4 @@
-from src.Config import Config
-from src.OrderPizza import OrderPizza
-import src.config.core as configFile
-from src.Logger import Logger
+from src.OrderPizzaFacade import OrderPizzaFacade
 
-config = Config(configFile)
-logger = Logger()
-
-order = OrderPizza(config, logger)
-order.acceptCookies()
-order.login()
-order.addProductsToCart()
-order.goToCheckout()
-order.selectDeliveryTime()
-order.selectPaymentType()
-order.send()
+order = OrderPizzaFacade()
+order.init()
