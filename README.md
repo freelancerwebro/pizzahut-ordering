@@ -27,7 +27,7 @@ vi src/config/core.py
 # How to order
 Run the following command in the console.
 ```
-**python order.py**
+python order.py
 ```
 
 ### Logs
