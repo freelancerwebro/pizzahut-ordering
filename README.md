@@ -19,7 +19,7 @@ source ~/.bash_profile
 ```
 
 # How to customize your order
-Open the following file and modify the `default_order` section as you like.
+Open the file bellow and modify the `default_order` section as you like.
 ```
 vi src/config/core.py
 ```
