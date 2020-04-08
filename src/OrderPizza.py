@@ -8,20 +8,15 @@ class OrderPizza:
     logger = None
     waitTimer = 5
 
-    def __init__(self, config, logger):
+    def __init__(self, config, logger, driver):
         self.config = config
         self.logger = logger
-        self.initDriver()
+        self.driver = driver
 
     def __del__(self):
         time.sleep(5)
         self.driver.close()
         self.logger.p("Close browser")
-
-    def initDriver(self):
-        chrome_options = webdriver.ChromeOptions()
-        #chrome_options.add_argument('headless')
-        self.driver = webdriver.Chrome(options=chrome_options)
 
     def acceptCookies(self):
         self.driver.get(self.config.getMyAccountUrl())
