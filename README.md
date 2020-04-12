@@ -19,6 +19,12 @@ export PIZZAHUT_PASSWORD="<<ADD YOUR PASSWORD>>"
 source ~/.bash_profile
 ```
 
+### Requirements
+```
+- Python 3
+- Selenium Webdriver
+```
+
 ### How to customize your order
 Open the file bellow and modify the `default_order` section as you like.
 ```
