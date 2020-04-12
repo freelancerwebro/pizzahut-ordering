@@ -81,5 +81,5 @@ class OrderPizza:
 
     def send(self):
         send = self.driver.find_element_by_css_selector('a.checkout_step3_bt')
-        # send.click()
+        send.click()
         self.logger.p("Place order")
