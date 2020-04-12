@@ -1,18 +1,19 @@
 # PizzaHut ordering
-This piece of software written in Python allows you to order your favorite pizza from PizzaHut (pizzahutdelivery.ro) just by running a simple command in console.
+This piece of software written in Python allows you to order your favorite pizza from PizzaHut (PizzaHutDelivery.ro) just by running a simple command in console.
 
 ### How to set up
 
-1. Open your current user profile into a text editor
+1. Create an account on PizzaHutDelivery.ro and complete your delivery address
+
+2. Connect to your web server in SSH and open your user profile into a text editor
 ```
 sudo vi ~/.bash_profile
 ```
-2. Add the following environment variables and fill in your PizzaHut credentials
+3. Add the following environment variables and fill in your PizzaHut credentials and then save the file
 ```
 export PIZZAHUT_USERNAME="<<ADD YOUR USERNAME>>"
 export PIZZAHUT_PASSWORD="<<ADD YOUR PASSWORD>>"
 ```
-3. Save the file
 4. Reload your user profile
 ```
 source ~/.bash_profile
