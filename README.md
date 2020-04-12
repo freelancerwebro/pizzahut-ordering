@@ -5,11 +5,11 @@ This piece of software written in Python allows you to order your favorite pizza
 
 1. Create an account on PizzaHutDelivery.ro and complete your delivery address
 
-2. Connect to your web server in SSH and open your user profile into a text editor
+2. Connect to your web server using SSH and open your user profile into a text editor
 ```
 sudo vi ~/.bash_profile
 ```
-3. Add the following environment variables and fill in your PizzaHut credentials and then save the file
+3. Add the following environment variables with your PizzaHut credentials and then save the file
 ```
 export PIZZAHUT_USERNAME="<<ADD YOUR USERNAME>>"
 export PIZZAHUT_PASSWORD="<<ADD YOUR PASSWORD>>"
