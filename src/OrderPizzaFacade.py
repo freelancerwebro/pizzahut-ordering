@@ -1,14 +1,14 @@
 from src.Config import Config
 from src.OrderPizza import OrderPizza
-from src.Driver import Driver
 import src.config.core as configFile
-from src.Logger import Logger
+from src.Logger.PrintLogger import PrintLogger
+from src.Driver.ChromeDriver import ChromeDriver
 
 class OrderPizzaFacade:
     def init(self):
         config = Config(configFile)
-        logger = Logger()
-        driver = Driver.getInstance()
+        logger = PrintLogger()
+        driver = ChromeDriver.getInstance()
 
         order = OrderPizza(config, logger, driver)
         order.acceptCookies()

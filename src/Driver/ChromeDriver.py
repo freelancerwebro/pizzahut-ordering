@@ -1,6 +1,7 @@
 from selenium import webdriver
+from src.Driver.DriverInterface import DriverInterface
 
-class Driver:
+class ChromeDriver(DriverInterface):
     @staticmethod
     def getInstance():
         chrome_options = webdriver.ChromeOptions()
